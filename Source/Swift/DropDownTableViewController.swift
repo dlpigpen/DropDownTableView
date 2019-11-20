@@ -34,7 +34,7 @@ open class DropDownTableViewController: UIViewController, UITableViewDataSource,
     
     private(set) public lazy var nsk_selectedRow: Int? = self.showSubrowsInRow
     private(set) public var nsk_numberOfSubrows = 0
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak public var tableview: UITableView!
     
     open func numberOfRows(in tableView: UITableView) -> Int {
         
