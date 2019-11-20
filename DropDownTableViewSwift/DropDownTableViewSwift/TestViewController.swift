@@ -145,8 +145,7 @@ class TestViewController: DropDownTableViewController {
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         
         self.date = sender.date
-        
-        if let cell = self.tableView.cellForRow(at: 1) {
+        if let cell = self.tableview.cellForRow(at: 1) {
             
             cell.detailTextLabel?.text = self.date.customDateFormat
         }
@@ -177,7 +176,7 @@ extension TestViewController: UIPickerViewDelegate {
         
         self.value = row
         
-        if let cell = self.tableView.cellForRow(at: 0) {
+        if let cell = self.tableview.cellForRow(at: 0) {
             
             cell.detailTextLabel?.text = String(self.value)
         }

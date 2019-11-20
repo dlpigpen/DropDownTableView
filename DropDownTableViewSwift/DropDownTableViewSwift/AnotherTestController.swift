@@ -28,14 +28,14 @@ class AnotherTestController: DropDownTableViewController {
         
         self.numberOfRows += 2
         
-        self.tableView.insertRows(at: [0, 1], with: .automatic)
+        self.tableview.insertRows(at: [0, 1], with: .automatic)
     }
     
     func deleteRows(_ sender: UIBarButtonItem) {
         
         self.numberOfRows -= 2
         
-        self.tableView.deleteRows(at: [0, 1], with: .automatic)
+        self.tableview.deleteRows(at: [0, 1], with: .automatic)
     }
     
     override func numberOfRows(in tableView: UITableView) -> Int {
