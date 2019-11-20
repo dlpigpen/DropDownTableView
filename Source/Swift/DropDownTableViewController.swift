@@ -30,7 +30,7 @@ import UIKit
 
 @available(iOS 8.0, *)
 @objcMembers
-open class DropDownTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+open class DropDownTableViewController: RootViewController, UITableViewDataSource, UITableViewDelegate {
     
     private(set) public lazy var nsk_selectedRow: Int? = self.showSubrowsInRow
     private(set) public var nsk_numberOfSubrows = 0
