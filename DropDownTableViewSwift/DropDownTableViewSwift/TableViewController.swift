@@ -143,8 +143,8 @@ class TableViewController: DropDownTableViewController {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRow row: Int) {
-        
+    override func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRow row: Int) {
+  
         if editingStyle == .delete {
             
             self.data.remove(at: row)
@@ -157,7 +157,7 @@ class TableViewController: DropDownTableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forSubrow subrow: Int, inRow row: Int) {
+    override func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forSubrow subrow: Int, inRow row: Int) {
         
         if editingStyle == .delete {
             
@@ -181,12 +181,12 @@ class TableViewController: DropDownTableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRow row: Int) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRow row: Int) -> UITableViewCell.EditingStyle {
         
         return .delete
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForSubrow subrow: Int, inRow row: Int) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForSubrow subrow: Int, inRow row: Int) -> UITableViewCell.EditingStyle {
         
         return .delete
     }
@@ -232,12 +232,12 @@ class TableViewController: DropDownTableViewController {
         state.parameters.exchangeObject(at: sourceSubrow, withObjectAt: destinationSubrow)
     }
     
-    override func tableView(_ tableView: UITableView, animationForInsertionIn row: Int) -> UITableViewRowAnimation {
+    override func tableView(_ tableView: UITableView, animationForInsertionIn row: Int) -> UITableView.RowAnimation {
         
         return .right
     }
     
-    override func tableView(_ tableView: UITableView, animationForDeletionIn row: Int) -> UITableViewRowAnimation {
+    override func tableView(_ tableView: UITableView, animationForDeletionIn row: Int) -> UITableView.RowAnimation {
         
         return .left
     }

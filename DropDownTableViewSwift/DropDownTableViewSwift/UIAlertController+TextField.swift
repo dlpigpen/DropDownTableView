@@ -50,11 +50,11 @@ extension UIAlertController: UITextFieldDelegate {
         
         if string.isEmpty {
             
-            self.actions.first?.isEnabled = textField.text!.characters.count > 1
+            self.actions.first?.isEnabled = textField.text!.count > 1
             
         } else {
             
-            self.actions.first?.isEnabled = textField.text!.characters.count > 0
+            self.actions.first?.isEnabled = textField.text!.count > 0
         }
         
         return true

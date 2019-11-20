@@ -127,7 +127,7 @@ open class DropDownTableViewController: UITableViewController {
      open override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {}
     */
     
-    override public final func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override public final func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         self.valueForIndexPath(indexPath,
             valueForRow: { (row) -> Void in
@@ -409,14 +409,14 @@ open class DropDownTableViewController: UITableViewController {
         })
     }
     
-    override public final func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override public final func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         
         return self.valueForIndexPath(indexPath,
-            valueForRow: { (row) -> UITableViewCellEditingStyle in
+                                      valueForRow: { (row) -> UITableViewCell.EditingStyle in
                 
                 self.tableView(tableView, editingStyleForRow: row)
                 
-        }, valueForSubrow: { (subrow, row) -> UITableViewCellEditingStyle in
+        }, valueForSubrow: { (subrow, row) -> UITableViewCell.EditingStyle in
                 
                 self.tableView(tableView, editingStyleForSubrow: subrow, inRow: row)
         })

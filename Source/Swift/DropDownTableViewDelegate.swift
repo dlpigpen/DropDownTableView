@@ -61,8 +61,8 @@ public protocol DropDownTableViewDelegate : NSObjectProtocol {
     /*optional*/ func tableView(_ tableView: UITableView, didDeselectSubrow subrow: Int, inRow row: Int)
     
     // default is .none
-    /*optional*/ func tableView(_ tableView: UITableView, editingStyleForRow row: Int) -> UITableViewCellEditingStyle
-    /*optional*/ func tableView(_ tableView: UITableView, editingStyleForSubrow subrow: Int, inRow row: Int) -> UITableViewCellEditingStyle
+    /*optional*/ func tableView(_ tableView: UITableView, editingStyleForRow row: Int) -> UITableViewCell.EditingStyle
+    /*optional*/ func tableView(_ tableView: UITableView, editingStyleForSubrow subrow: Int, inRow row: Int) -> UITableViewCell.EditingStyle
     
     /*optional*/ func tableView(_ tableView: UITableView, editActionsForRow row: Int) -> [UITableViewRowAction]?
     /*optional*/ func tableView(_ tableView: UITableView, editActionsForSubrow subrow: Int, inRow row: Int) -> [UITableViewRowAction]?
@@ -151,11 +151,11 @@ extension DropDownTableViewController: DropDownTableViewDelegate {
     open func tableView(_ tableView: UITableView, didDeselectRow row: Int) {}
     open func tableView(_ tableView: UITableView, didDeselectSubrow subrow: Int, inRow row: Int) {}
     
-    open func tableView(_ tableView: UITableView, editingStyleForRow row: Int) -> UITableViewCellEditingStyle {
+    open func tableView(_ tableView: UITableView, editingStyleForRow row: Int) -> UITableViewCell.EditingStyle {
         
         return .none
     }
-    open func tableView(_ tableView: UITableView, editingStyleForSubrow subrow: Int, inRow row: Int) -> UITableViewCellEditingStyle {
+    open func tableView(_ tableView: UITableView, editingStyleForSubrow subrow: Int, inRow row: Int) -> UITableViewCell.EditingStyle {
         
         return .none
     }

@@ -33,8 +33,8 @@ public protocol DropDownTableViewDataSource : NSObjectProtocol {
     func tableView(_ tableView: UITableView, cellForSubrow subrow: Int, inRow row: Int, indexPath: IndexPath) -> UITableViewCell
     
     // default is .automatic
-    /*optional*/ func tableView(_ tableView: UITableView, animationForInsertionIn row: Int) -> UITableViewRowAnimation
-    /*optional*/ func tableView(_ tableView: UITableView, animationForDeletionIn row: Int) -> UITableViewRowAnimation
+    /*optional*/ func tableView(_ tableView: UITableView, animationForInsertionIn row: Int) -> UITableView.RowAnimation
+    /*optional*/ func tableView(_ tableView: UITableView, animationForDeletionIn row: Int) -> UITableView.RowAnimation
     
     /// define row whose subrow will be shown at initial appearance
     /*optional*/ var showSubrowsInRow: Int? { get } // default is nil
@@ -47,8 +47,8 @@ public protocol DropDownTableViewDataSource : NSObjectProtocol {
     /*optional*/ func tableView(_ tableView: UITableView, canEditRow row: Int) -> Bool
     /*optional*/ func tableView(_ tableView: UITableView, canEditSubrow subrow: Int, inRow row: Int) -> Bool
     
-    /*optional*/ func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRow row: Int)
-    /*optional*/ func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forSubrow subrow: Int, inRow row: Int)
+    /*optional*/ func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRow row: Int)
+    /*optional*/ func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forSubrow subrow: Int, inRow row: Int)
     
     // default is false
     /*optional*/ func tableView(_ tableView: UITableView, canMoveRow row: Int) -> Bool
@@ -64,12 +64,12 @@ public protocol DropDownTableViewDataSource : NSObjectProtocol {
 
 extension DropDownTableViewController: DropDownTableViewDataSource {
     
-    open func tableView(_ tableView: UITableView, animationForInsertionIn row: Int) -> UITableViewRowAnimation {
+    open func tableView(_ tableView: UITableView, animationForInsertionIn row: Int) -> UITableView.RowAnimation {
         
         return .automatic
     }
     
-    open func tableView(_ tableView: UITableView, animationForDeletionIn row: Int) -> UITableViewRowAnimation {
+    open func tableView(_ tableView: UITableView, animationForDeletionIn row: Int) -> UITableView.RowAnimation {
         
         return .automatic
     }
@@ -88,8 +88,8 @@ extension DropDownTableViewController: DropDownTableViewDataSource {
         return false
     }
     
-    /*optional*/ open func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRow row: Int) {}
-    /*optional*/ open func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forSubrow subrow: Int, inRow row: Int) {}
+    /*optional*/ open func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRow row: Int) {}
+    /*optional*/ open func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forSubrow subrow: Int, inRow row: Int) {}
     
     /*optional*/ open func tableView(_ tableView: UITableView, canMoveRow row: Int) -> Bool {
         
